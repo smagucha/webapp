@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState}from 'react';
-import { StyleSheet, Text, View, TouchableHighlight, Button,
- Image, TextInput, Picker, Switch, FlatList, ActivityIndicator,
+import { StyleSheet, Text, View, ImageBackground, Button 
 } from 'react-native';
 
 export default function App() {
@@ -10,24 +9,14 @@ export default function App() {
 
   return (
   <View style={styles.container}>
-      <Text>my first app</Text>
-      <StatusBar style="auto" />
-        <TouchableHighlight style={styles.button}>
-      <Text>Get Started</Text>
-      </TouchableHighlight>
-      <Text> my name is engineer {name}  </Text>
-      <Image source={ require("./assets/desktopsetup.jpg") } />
-      <TouchableHighlight onPress={() => { console.log("Pressed!"); }} >
-        <Text>Tap me to hide modal</Text>
-      </TouchableHighlight>
-      <TextInput 
-      style={{ width : "50%", height : 40, borderColor : "green", borderWidth : 2 }}
-      />
-     <Switch />
-     <Button title="Go ahead, press me, I dare ya!"
-     onPress={ () =>{ console.log("i love sam"); }}
-      />
-      <ActivityIndicator size="large" color="#ff0000" />
+    <ImageBackground style={styles.imgBackground}
+    source={ require("./assets/desktopsetup.jpg")} 
+    style={{width: '100%', height: '100%'}}> 
+    <Text> hello sam </Text>
+    <Button 
+    title='sam profile' 
+    style={styles.button}/>
+    </ImageBackground>
     </View>
   );
 }
@@ -37,14 +26,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+
   },
-  button: {
-    marginTop: 25,
-    backgroundColor: 'orange',
-    height: 55,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginHorizontal: 10,
-    width: '100%'
-}
+  imgBackground: {
+        width: '100%',
+        height: '100%',
+        flex: 1,
+        color: 'orange',
+},
+ button: {
+  // style button to go bottom
+ }
 });
